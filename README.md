@@ -1,6 +1,6 @@
 # FeatureRequest
 The features are requested and tracked.
-FeatureRequestAndTrack
+Current work being done is in Version1 branch as of now.
 
 ##INTRODUCTION:
 	The application develops a feature that helps in finalizing the interaction between the clients and the product owner.
@@ -13,8 +13,18 @@ FeatureRequestAndTrack
 	3. Admin
 	4. Team
 
-##TODO ROles needs to be redefined.
+##Roles
+1.Clients
+	-Make a feature request.
+	-Participates in discussion on feature requests.
 
+2.Project Manager
+	-Team Management.
+	-Features status change, prioritisation and allocation.
+
+3.Team Members
+	-Participates in discussion on feature requests.
+	 
 
 ##DEVELOPMENT PHASES AND VERSIONS:
 	Version 1
@@ -25,9 +35,9 @@ FeatureRequestAndTrack
 
 		The major application dependencies:
 			Backend - 
-			1. Django 							1.10.1
+			1. Django 			1.10.1
 			2. Django_extensions 		1.7.4
-			3. Pip									8.1.2
+			3. Pip				8.1.2
 			4. Virtualenvwrapper		4.7.2
 
 			Frontend -
@@ -60,4 +70,6 @@ FeatureRequestAndTrack
 		1.I would like to have few guidelines in designing and implementing  the versions 3 and 4.
 		
 ##DEPLOYMENT STEPS:
-##TODO 
+
+##TODO
+	Version1 features yet to be brought live.
