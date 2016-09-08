@@ -14,34 +14,33 @@ FeatureRequestAndTrack
 	4. Team
 
 
-DEVELOPMENT PHASES AND VERSIONS:
+##DEVELOPMENT PHASES AND VERSIONS:
 	Version 1
 		Features-
-		1. Normal user login feature.
-		2. Feature tracking without notifications.
-		3. Team management by project Manager.
+			1. Normal user login feature.
+			2. Feature tracking without notifications.
+			3. Team management by project Manager.
 
 		The major application dependencies:
-		Backend - 
-		1. Django 					1.10.1
-		2. Django_extensions 		1.7.4
-		3. Pip						8.1.2
-		4. Virtualenvwrapper		4.7.2
+			Backend - 
+			1. Django 					1.10.1
+			2. Django_extensions 		1.7.4
+			3. Pip						8.1.2
+			4. Virtualenvwrapper		4.7.2
 
-		Frontend -
-		1. Html5
-		2. AngularJs 
-
+			Frontend -
+			1. Html5
+			2. AngularJs 
 
 	Version 2
-		1. The SAML based user login version using the already present IDP.
-		2. Feature tracking with notifications enabled. 
-													(CRITICAL FEATURE)
-		3. Feature gets reassigned to other team by Project Manger.
+			1. The SAML based user login version using the already present IDP.
+			2. Feature tracking with notifications enabled. 
+														(CRITICAL FEATURE)
+			3. Feature gets reassigned to other team by Project Manger.
 
-		The major application dependencies:
-		Backend - 
-		1. Rethink DB for notifications.
+			The major application dependencies:
+			Backend - 
+			1. Rethink DB for notifications.
 
 
 	Version 3
