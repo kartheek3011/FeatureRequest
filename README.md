@@ -13,6 +13,8 @@ FeatureRequestAndTrack
 	3. Admin
 	4. Team
 
+##TODO ROles needs to be redefined.
+
 
 ##DEVELOPMENT PHASES AND VERSIONS:
 	Version 1
@@ -57,4 +59,5 @@ FeatureRequestAndTrack
 ##NOTE:
 		1.I would like to have few guidelines in designing and implementing  the versions 3 and 4.
 		
-DEPLOYMENT STEPS:
+##DEPLOYMENT STEPS:
+##TODO 
