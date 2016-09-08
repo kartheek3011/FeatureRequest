@@ -1,5 +1,5 @@
 # FeatureRequest
-The features are requested and tracked.
+The features are requested and tracked.<br />
 Current work being done is in Version1 branch as of now.
 
 ##INTRODUCTION:
@@ -14,16 +14,16 @@ Current work being done is in Version1 branch as of now.
 	4. Team
 
 ##Roles
-1.Clients
-	-Make a feature request.
-	-Participates in discussion on feature requests.
+1.Clients<br />
+	-Make a feature request.<br />
+	-Participates in discussion on feature requests.<br />
 
-2.Project Manager
-	-Team Management.
-	-Features status change, prioritisation and allocation.
+2.Project Manager<br />
+	-Team Management.<br />
+	-Features status change, prioritisation and allocation.<br />
 
-3.Team Members
-	-Participates in discussion on feature requests.
+3.Team Members<br />
+	-Participates in discussion on feature requests.<br />
 	 
 
 ##DEVELOPMENT PHASES AND VERSIONS:
@@ -35,9 +35,9 @@ Current work being done is in Version1 branch as of now.
 
 		The major application dependencies:
 			Backend - 
-			1. Django 			1.10.1
+			1. Django 					1.10.1
 			2. Django_extensions 		1.7.4
-			3. Pip				8.1.2
+			3. Pip						8.1.2
 			4. Virtualenvwrapper		4.7.2
 
 			Frontend -
