@@ -15,7 +15,7 @@ FeatureRequestAndTrack
 
 
 ##DEVELOPMENT PHASES AND VERSIONS:
-	###Version 1
+	Version 1
 		Features-
 			1. Normal user login feature.
 			2. Feature tracking without notifications.
@@ -32,7 +32,7 @@ FeatureRequestAndTrack
 			1. Html5
 			2. AngularJs 
 
-	###Version 2
+	Version 2
 		Features-
 			1. The SAML based user login version using the already present IDP.
 			2. Feature tracking with notifications enabled. 
@@ -44,12 +44,12 @@ FeatureRequestAndTrack
 			1. Rethink DB for notifications.
 
 
-	###Version 3
+	Version 3
 		Features-
 			1. The feature check with providing IDP ourselves. 
 			2. The email service notification provider.
 
-	###Version 4
+	Version 4
 		Features-
 			1. The feature of multiple conversation in a single window.
 			2. The archieving oef features and conversations by project Manager.
