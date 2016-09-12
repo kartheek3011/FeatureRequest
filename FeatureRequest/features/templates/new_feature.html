@@ -1,0 +1,105 @@
+{% extends "base.html" %}  
+{% load staticfiles %}
+{% load core_template_tags %}
+
+{% block scripts %}
+   <script type="text/javascript" src="{% static 'js/explore/feature_controller.js' %}"></script>
+{% endblock scripts %}
+
+{% block main %}
+	<section class="container" ng-controller="FeatureController" style="margin-top:20px;">
+		<div class="col-md-3" name="side_menu_bar">
+			<p class="col-md-12"><a href="{% url 'features' %}"></a></p>
+		</div>
+		<div class="col-md-9" name="feature">
+			<form class="form-horizontal form-container" name="feature_form" ng-controller="FeatureController" 
+			style="">
+				
+				<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="title" placeholder="title">
+						<p class="custom_error_message" id="title_required">Title is required</p>
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="description" placeholder="description">
+						<p class="custom_error_message" id="desc_required">Description is required</p>
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="url" class="form-control" id="ticket_url" placeholder="ticket_url" >
+						<p class="custom_error_message" id="url_required">Ticket url is required</p>
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="status" value="Fresh" disabled>
+						
+				    </div> 
+			  	</div>
+
+			  	<!-- TODO Change it to range -->
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="number" class="form-control" id="priority" placeholder="priority">
+						<p class="custom_error_message" id="priority_required">
+						Priority is required</p>
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="date" class="form-control" id="date" placeholder="target_date">
+						<p class="custom_error_message" id="date_required">Target date is required</p>
+				    </div> 
+			  	</div>
+
+			  	<!-- TODO Change it to dropdown -->
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="team" placeholder="team_name">
+						<p class="custom_error_message" id="team_required">Team is required</p>
+				    </div> 
+			  	</div>
+			  	
+			  	<div class="form-group">
+				    <div class="col-sm-10">
+				    	<input type="date" class="form-control" id="client" value="{{ request.user }}">
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-12">
+				    	<button type="submit" class="btn btn-default" ng-click="validate_form(country, dept)" style="margin-left:25px;">Edit Feature</button>
+				    	<div class="spinner" id="spinner" style="display:none;">
+							<div class="rect1"></div>
+							<div class="rect2"></div>
+							<div class="rect3"></div>
+							<div class="rect4"></div>
+							<div class="rect5"></div>
+						</div>
+				    </div>
+			  	</div>			
+		</div>
+	</section>
+		
+				
+<!-- 
+	<div class="form-group">
+    <div class="col-sm-10">
+    	<select id="country" class="form-control" 
+    			ng-model="country" 
+    			ng-options="country as country.name for country in countries" 
+    			ng-init="country = countries[0]">
+    	</select>
+    	<p class="custom_error_message" id="country_required">Select country</p>
+    </div>
+	</div> 
+-->
+			
+{% endblock main %}

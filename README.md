@@ -52,9 +52,9 @@ FeatureRequestAndTrack
 	Version 4
 		Features-
 			1. The feature of multiple conversation in a single window.
-			2. The archieving oef features and conversations by project Manager.
+			2. The archieving of features and conversations by project Manager.
 
 ##NOTE:
 		1.I would like to have few guidelines in designing and implementing  the versions 3 and 4.
-		
+
 DEPLOYMENT STEPS:

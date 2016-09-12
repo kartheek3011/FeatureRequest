@@ -27,9 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# EMAIL_SSL = True
+ADMIN_EMAIL = "kartheek3011@gmail.com"
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kartheek3011@gmail.com'
+EMAIL_HOST_PASSWORD = ''
 
 # Application definition
-
 INSTALLED_APPS = [
     'features.apps.FeaturesConfig',
     'users.apps.UsersConfig',
@@ -57,7 +63,9 @@ ROOT_URLCONF = 'FeatureRequest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,"/static"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,5 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS= [
-    os.path.join(BASE_DIR,"bu/static"),
+    os.path.join(BASE_DIR,"/static"),
 ]
+
+

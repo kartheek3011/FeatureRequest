@@ -1,0 +1,115 @@
+{% extends "base.html" %}  
+{% load staticfiles %}
+{% load core_template_tags %}
+
+{% block scripts %}
+   <script type="text/javascript" src="{% static 'js/explore/profile_controller.js' %}"></script>
+{% endblock scripts %}
+
+
+{% block main %}
+	<section class="container" ng-controller="ProfileController" style="margin-top:20px;">
+		<div class="col-md-6">
+			<h4>Update Profile</h4>
+			<hr style="margin:0; border: solid 1px rgba(0, 0, 0, 0.27);">
+
+			<form class="form-horizontal form-container" name="profile_form" style="margin-top:20px;">
+					
+				<div class="form-group">
+				    <label for="fname" class="col-sm-2 control-label">Firstname</label>
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" 
+				    		   id="fname" placeholder="Firstname"
+				    		   {% if user_profile.user.first_name %} value="{{ user_profile.user.first_name }}" {% endif %}
+				    		   >
+						<p class="custom_error_message" id="fname_required">First name is required</p>
+				    </div> 
+			  	</div>
+
+			  	<div class="form-group">
+				    <label for="sname" class="col-sm-2 control-label">Lastname</label>
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="sname" placeholder="Lastname"
+				    	{% if user_profile.user.last_name %} value="{{ user_profile.user.last_name }}" {% endif %} >
+						<p class="custom_error_message" id="sname_required">Lastname is required</p>
+				    </div> 
+			  	</div>
+
+			  	<!-- <div class="form-group">
+				    <label for="email" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				    	<input type="email" class="form-control" id="email" placeholder="Company Email"
+				    	{% if user_profile.user.email %} value="{{ user_profile.user.email }}" {% endif %} >
+				    	<p class="custom_error_message" id="email_error">Email address is invalid</p>
+	                    <p class="custom_error_message" id="email_required">Email address is required</p>
+	                    <p class="custom_error_message" id="email_exists">Email address is taken by another user</p>
+	                    <p class="custom_error_message" id="company_id_error">Company email id is required</p>
+				    </div>
+			  	</div>	 -->
+
+			  	<div class="form-group">
+				    <label for="phone_number" class="col-sm-2 control-label">Contact Number</label>
+				    <div class="col-sm-10">
+				   		<input type="number" class="form-control" id="phone_number" placeholder="Contact Number (Optional)"{% if user_profile.phone_number %} value="{{ user_profile.phone_number }}" {% endif %}>
+				    </div>
+			  	</div>
+
+			  	<div class="form-group">
+				    <label for="company" class="col-sm-2 control-label">Company</label>
+				    <div class="col-sm-10">
+				    	<input type="text" class="form-control" id="company" placeholder="Name of your company"
+				    	{% if user_profile.company.name %} value="{{ user_profile.company.name }}" {% endif %}>
+				    	<p class="custom_error_message" id="company_required">Company name is required</p>
+				    </div>
+			  	</div>
+
+			  	<div class="form-group" data-country="{{ user_profile.company.country }}" id="given_country">
+			  		{% verbatim %}
+					    <label for="country" class="col-sm-2 control-label">Country</label>
+					    <div class="col-sm-10">
+					    	<select id="country" class="form-control" 
+					    			ng-model="country" 
+					    			ng-options="country as country for country in countries" 
+					    			>
+					    	</select>
+					    	<p class="custom_error_message" id="country_required">Select country</p>
+					    </div>
+					{% endverbatim %} 
+			  	</div>
+
+			  	<div class="form-group" id="given_dept" data-dept="{{ user_profile.role.name }}">
+			  		{% verbatim %}
+					    <label for="dept" class="col-sm-2 control-label">Department</label>
+					    <div class="col-sm-10">
+					    	<select id="dept" 
+					    			class="form-control"
+					    			ng-model="dept" 
+					    			ng-options="role as role for role in 
+					    			['Select','Marketing','Sales','Support','IT','Operations','HR']" 
+					    			>
+					    	</select>
+					    	<p class="custom_error_message" id="dept_required">Select Department</p>
+					    </div>
+				    {% endverbatim %}
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				    	<button type="submit" class="btn btn-default" ng-click="validate_form(country, dept)">Update Profile</button>
+				    	<div class="spinner" id="spinner" style="display:none;">
+							<div class="rect1"></div>
+							<div class="rect2"></div>
+							<div class="rect3"></div>
+							<div class="rect4"></div>
+							<div class="rect5"></div>
+						</div>
+						<p id="profile_updated" class="alert alert-success" style="display:none">Profile Updated</p>
+				    </div>
+
+			  	</div>
+			</form>
+		</div>
+			
+	</section>
+
+{% endblock main %} 

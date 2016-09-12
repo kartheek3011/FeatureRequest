@@ -5,8 +5,7 @@ from django.db import models
 from django.utils import timezone
 
 #local imports
-from users.models import Team
-from users.models import Client
+from users.models import Team, Client
 
 # Create your models here.
 
@@ -26,7 +25,7 @@ class FeatureRequest(AdditionalInfo):
 		('InDiscussion', "InDiscussion"),
 		('InWork', "InWork"),
 		('Closed', "Closed"),
-		('Archieve', "Archieve"),
+		('Archieve', "Archieve"),  #future
 		)
 
 	#identity features
@@ -46,9 +45,9 @@ class FeatureRequest(AdditionalInfo):
 	def __str__(self):
 		return '%s' % (self.title)
 
-class discussion_comment(AdditionalInfo):
+class DiscussionComment(AdditionalInfo):
 	content = models.TextField(max_length=150)
-	request = models.ForeignKey(FeatureRequest)
+	feature = models.ForeignKey(FeatureRequest)
 	user = models.ForeignKey(User)
 
 	def __str__(self):

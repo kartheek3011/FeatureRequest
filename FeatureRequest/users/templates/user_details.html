@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load core_template_tags %}
+
+{% block main %}
+<section class="container">
+    <h3>{{user_details.user.first_name}} {{ user_details.user.last_name }}</h3>
+    <p>{{ user_details.role.name }}</p>
+    <p>{{ user_details.company.name }}</p>
+    <p>{{ user_details.company.country }}</p>
+</section>
+{% endblock main %}

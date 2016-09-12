@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load core_template_tags %}
+
+{% block scripts %}
+   <script type="text/javascript" src="{% static 'js/explore/login_controller.js' %}"></script>
+{% endblock scripts %}
+
+{% block main %}
+	<section class="container" ng-controller="LoginController">
+		<div class="col-md-7" style="margin-top:25px;">
+			<div class="card2">
+			<form class="form-horizontal form-container" 
+					name="LoginForm" 
+					style="margin-top:20px;">
+
+				<div class="form-group">
+				    <label for="email" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				    	<input type="email" class="form-control" id="email" placeholder="Email">
+				    	<p class="custom_error_message" id="email_error">Email address is invalid</p>
+                        <p class="custom_error_message" id="email_required">Email address is required</p>
+                        <p class="custom_error_message" id="email_exists">Email address is taken by another user</p>
+                        <p class="custom_error_message" id="company_id_error">Give  email id</p>
+				    </div>
+			  	</div>
+			  	
+			  	<div class="form-group">
+				    <label for="password" class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-10">
+				   		<input type="password" class="form-control" id="password" placeholder="Password">
+				   		<p class="custom_error_message" id="password_required">Enter password</p>
+				    </div>
+			  	</div>
+
+			  	<div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				    	<button type="submit" class="btn btn-default" ng-click="validate_form()">Login</button>
+				    </div>
+			  	</div>
+
+			  	<p class="alert alert-danger" id="error_msg" style="display:none;"></p>
+			  	<a href="/forgot_password/">Forgot Password?</a>
+			  	<h6 style="display: block;">If you don't have an account, please <a href="{% url 'client_create_account' %}">Client Sign up</a>.</h6>
+			  	<h6 style="display: block;">If you don't have an account, please <a href="{% url 'team_member_create_account' %}">Team Sign up</a>.</h6>
+			
+			</form>
+			</div>
+		</div>
+	</section>
+{% endblock main%}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}  
+{% load staticfiles %}
+{% load core_template_tags %}
+
+{% block scripts %}
+   <script type="text/javascript" src="{% static 'js/explore/..................................js' %}"></script>
+{% endblock scripts %}
+
+{% block main %}
+	<section class="container" ng-controller="......................Controller" style="margin-top:20px;">
+		<div class="col-md-3" name="side_menu_bar">
+			<p><a href="{% url 'features' %}"></a></p>
+		</div>
+		<div class="col-md-9" name="features">
+			<div class="col-md-2" name="fresh">
+			<h5> Fresh </h5>
+				{%for feature in features | filter_status: "Fresh" %}
+					<p><a href="/feature/{{ feature.id }}"></a></p>
+				{%endfor%}
+			</div>
+			<div class="col-md-2" name="assigned">
+			<h5> Assigned </h5>
+				{%for feature in features | filter_status: "Assigned" %}
+					<p><a href="/feature/{{ feature.id }}"></a></p>
+				{%endfor%}
+			</div>
+			
+			<div class="col-md-2" name="in_discussion">
+			<h5> In discussion </h5>
+				{%for feature in features | filter_status: "InDiscussion" %}
+					<p><a href="/feature/{{ feature.id }}"></a></p>
+				{%endfor%}
+			</div>
+			
+			<div class="col-md-2" name="closed">
+			<h5> Closed </h5>
+				{%for feature in features | filter_status: "Closed" %}
+					<p><a href="/feature/{{ feature.id }}"></a></p>
+				{%endfor%}
+			</div>
+		</div>
+	</section>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block main %}
+    <section id="promo-1" class="content-block promo-1 min-height-600px bg-offwhite" style="background-image:url('/static/img/index.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                    <h2 class="black" style="display: block;">Advanced Analytics made simple!</h2>
+                    <a href="{% url 'client_create_account' %}" class="btn btn-primary btn-block">Create an account for client</a><br />
+                    <a href="{% url 'team_member_create_account' %}" class="btn btn-primary btn-block">Create an account for team member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}
